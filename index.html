@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+        }
+    </style>
+</head>
+<body
+>
+
+    <div id="container">
+        <div id="screen1" class="screen active">
+            <h1>Tela 1</h1>
+            <p>Esta é a primeira tela.</p>
+        </div>
+        <div id="screen2" class="screen">
+            <h1>Tela 2</h1>
+            <p>Esta é a segunda tela.</p>
+        </div>
+
+        <button id="toggleButton">Mudar de Tela</button>
+    </div>
+
+    <script>
+        const screen1 = document.getElementById('screen1');
+        const screen2 = document.getElementById('screen2');
+        const toggleButton = document.getElementById('toggleButton');
+
+        toggleButton.addEventListener('click', () => {
+            screen1.classList.toggle('active');
+            screen2.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>
